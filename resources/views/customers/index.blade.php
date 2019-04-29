@@ -10,8 +10,12 @@
   <h1>Customers - Index</h1>
 
 <ul>
+  @foreach ($customers as $customer)
+     <li>{{$customer->first_name}} {{$customer->last_name}}</li>
+    
+    @endforeach
 
-<li>{{ $name }}</li>
+
 </ul>
 
 </body>

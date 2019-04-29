@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    King Williams Hotel
                 </div>
 
                 <div class="links">

@@ -11,12 +11,21 @@
 |
 */
 
+
 Route::get('/', function () {
-  return view('welcome');
+return view('welcome');
 });
 
 // Route::get('/customers', function () {
-//   return view('customers.index');
-// });
+  // return view('customers.index');
+//  });
 
 Route::get('/customers', 'CustomersController@index');
+Route::post('/customers', "CustomersController@store");
+//return view('customers.index');
+//});
+// //Route::get('/customers', function () {
+// //return view('customers')}
+//
+// Route::get('/customers/create', function () {
+// return view('create')}

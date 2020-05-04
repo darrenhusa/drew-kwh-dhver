@@ -12,17 +12,22 @@
 */
 
 
+//Route::get('/', "PagesController@home");
 Route::get('/', function () {
 return view('welcome');
 });
+Route::resource('customers', "CustomersController");
 
 // Route::get('/customers', function () {
   // return view('customers.index');
 //  });
+//Route::get('/reservations', "ReservationsController@index");
 
+Route::get('/reservations/create/{customer_id}', "ReservationsController@create_reservation");
+Route::post('/reservations/{customer_id}', "ReservationsController@store");
 Route::get('/customers', 'CustomersController@index');
 Route::post('/customers', "CustomersController@store");
-//return view('customers.index');
+return view('customers.index');
 //});
 // //Route::get('/customers', function () {
 // //return view('customers')}

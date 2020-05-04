@@ -44,9 +44,9 @@ class CreateReservationsTable extends Migration
 
         $table->bigInteger('customer_id')->unsigned();
 
-        $table->foreign('customer_id')->references('id')->on('customers');
+        //$table->foreign('customer_id')->references('id')->on('customers');
 
-        $table->timestamps();
+        //$table->timestamps();
 
     });
 

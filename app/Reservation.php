@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Reservation extends Model
 {
-  public function reservation()
-  {
-    return $this ->hasOne('App\Reservation');
-  }
+  
+public $timestamps = false;
+
 }

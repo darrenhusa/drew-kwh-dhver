@@ -17,7 +17,7 @@ class ReservationsController extends Controller
 
  public function create()
  {
-   dd("god help me");
+   //dd("god help me");
    return view ('reservations.create');
  }
 

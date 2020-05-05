@@ -27,30 +27,30 @@ class CustomersController extends Controller
   {
     // dd('inside store');
 
-    $customer = new Customer();
+    $customers = new Customer();
 
-    $customer->first_name = request('first_name');
-    $customer->last_name = request('last_name');
+    $customers->first_name = request('first_name');
+    $customers->last_name = request('last_name');
     // dd($customer);
-    $customer->save();
+    $customers->save();
 
     return redirect('/customers');
   }
 
   public function edit($id)
   {
-    $customer = Customer::find($id);
+    $customers = Customer::find($id);
     return view('customers.edit', compact('customer'));
   }
 
   public function update($id)
   {
-    $customer = Customer::find($id);
+    $customers = Customer::find($id);
 
-    $customer->first_name = request('first_name');
-    $customer->last_name = request('last_name');
+    $customers->first_name = request('first_name');
+    $customers->last_name = request('last_name');
 
-    $customer->save();
+    $customers->save();
 
     return redirect('/customers');
   }

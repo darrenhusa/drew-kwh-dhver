@@ -18,7 +18,9 @@ class CreateCustomersTable extends Migration
             //$table->primary('id');
 			$table->string('first_name');
 			$table->string('last_name');
-            //$table->timestamps();
+      //$table->string('updated_at')
+      //$table->string('created_at')
+            $table->timestamps();
         });
     }
 

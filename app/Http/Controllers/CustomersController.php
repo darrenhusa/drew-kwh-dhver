@@ -43,8 +43,10 @@ class CustomersController extends Controller
   }
 
 
-  public function show($id) {
-      dd('hello world');
+  public function show() {
+      //dd('hello world');
+      //$customers = Customer::get($id);
+        return view ('customers.edit',);
    }
 
 

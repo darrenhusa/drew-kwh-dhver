@@ -14,13 +14,11 @@
 
   <h1>Enter New Customer</h1>
 
-  <form method="POST" action="/customers">
+  <form method="POST" action="/customers/{{ $customer->id }}/edit">
 
     @method('patch')
 
     @csrf
-
-
 
     <div>
 

@@ -17,21 +17,28 @@ Route::get('/', function () {
 return view('welcome');
 });
 Route::resource('customers', "CustomersController");
+Route::resource('customers/edit', "CustomersController");
 
 // Route::get('/customers', function () {
   // return view('customers.index');
 //  });
-Route::get('/reservations', "ReservationsController@index");
-
+//Route::get('/reservations', "ReservationsController@index");
+//Route::get('/customers/edit',"CustomersController@edit");
 //Route::get('/reservations/create/{customer_id}', "ReservationsController@create_reservation");
 //Route::post('/reservations/{customer_id}', "ReservationsController@store");
-Route::get('/customers', 'CustomersController@index');
-Route::post('/customers', "CustomersController@store");
-Route::get('/customers/{customer}' . ':CustomersController@show');
-Route::get('/customers{customer}/edit', ":CustomersController@edit");
-Route::patch('/customers{customer}', ":CustomersController@update");
-Route::delete('/customers{customer}', ":CustomersController@destroy");
+
+
+
+//Route::get('/customers', 'CustomersController@index');
+//Route::post('/customers', 'CustomersController@Create');
+//Route::get('/customers/{customer}' , 'CustomersController@show');
+//Route::post('/customers', 'CustomersController@store');
+//Route::get('/customers{customer/edit}', 'CustomersController@edit');
+//Route::patch('/customers{customer}', 'CustomersController@update');
+//Route::delete('/customers{customer}', 'CustomersController@destroy');
 return view('customers.index');
+
+
 //});
 // //Route::get('/customers', function () {
 // //return view('customers')}

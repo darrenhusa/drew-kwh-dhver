@@ -17,12 +17,16 @@ class CustomersController extends Controller
     return view ('customers.index', ['customers' => $customers]);
   }
 
+
+
   public function create()
   {
 
     //dd('hello');
-    return view ('customers.create');
+    return view ('customers.Create');
   }
+
+
 
   public function store()
   {
@@ -37,6 +41,14 @@ class CustomersController extends Controller
 
     return redirect('/customers');
   }
+
+
+  public function show($id) {
+      dd('hello world');
+   }
+
+
+
 
   public function edit($id)
   {

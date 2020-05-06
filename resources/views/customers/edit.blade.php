@@ -14,7 +14,7 @@
 
   <h1>Enter New Customer</h1>
 
-  <form method="POST" action="/customers/{{ $customer->id }}/edit">
+  <form method="POST" action="/customers">
 
     @method('patch')
 

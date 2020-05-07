@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 
 
-class CustomersController extends Controller
+class EditController extends Controller
 {
 
   public function index()
@@ -72,7 +72,7 @@ class CustomersController extends Controller
 
   public function destroy($id)
   {
-    $Customers=customer::find($id)->delete();
+    Customer::find($id)->delete();
 
     return redirect('/customers');
   }

@@ -71,9 +71,10 @@ class EditController extends Controller
   }
 
   public function destroy($id)
-  {
-    Customer::find($id)->delete();
+ {
+   Customers::find($id)->delete();
 
-    return redirect('/customers');
+   return redirect('/customers');
+
   }
 }

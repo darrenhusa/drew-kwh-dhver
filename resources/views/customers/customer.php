@@ -29,6 +29,7 @@ $db = mysql_select_db("customers", $connection); // Selecting Database from Serv
 		<input class="input" type="text" name="Last Name" value="$last_name" /><br />
 
 		<p><input type="submit" /></p>
+  </form>
 
   </div>
 

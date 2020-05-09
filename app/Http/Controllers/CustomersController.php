@@ -72,8 +72,9 @@ class CustomersController extends Controller
 
   public function destroy($id)
   {
-    $Customers=customer::find($id)->delete();
-
-    return redirect('/customers');
+    $customers->delete($id);
+    //customer::find($id)->delete($customer);
+/// issue is possible here////
+    return redirect('customers');
   }
 }

@@ -14,11 +14,21 @@
 
 Route::get('/', "PagesController@home");
 Route::get('/', function () {
-return view('welcome');
+  return view('welcome');
 
 });
 Route::resource('customers', "CustomersController");
-Route::resource('edit', "EditController");
+Route::match(['Delete', 'post'], 'customers{customer}', function () {
+Route::get('customers/{id}', function ($id) {
+      return 'customers'.$id;
+//Route::get('customers/{id}', function ($id) {
+    //return 'customers '.$id;
+});
+//Route::any('/', function () {
+    //
+//});
+//Route::resource('edit', "EditController");
+});
 //Route::any('customers', function () {
 //Route::resource('customers/edit', "CustomersController");
 

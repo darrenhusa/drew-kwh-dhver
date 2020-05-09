@@ -7,16 +7,18 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Customers - Index</h1>
-
-<ul>
-  @foreach ($customers as $customer)
-     <li>{{$customer->first_name}} {{$customer->last_name}}</li>
-    
-    @endforeach
-
-
-</ul>
-
+  <h1>All Customers</h1>
+  <p>
+    <a href="/customers/create">Enter Customer</a>
+  </p>
+  <ul>
+    @foreach ($customers as $customer)
+      <li>{{$customer->first_name}} {{$customer->last_name}}</li>
+      <p>
+      <a href="/customers/{{$customer->id}}/edit">Edit Customer</a>
+  
+    </p>
+      @endforeach
+  </ul>
 </body>
 </html>

@@ -18,17 +18,16 @@ Route::get('/', function () {
 
 });
 Route::resource('customers', "CustomersController");
-Route::match(['Delete', 'post'], 'customers{customer}', function () {
-Route::get('customers/{id}', function ($id) {
-      return 'customers'.$id;
+//Route::match(['Delete', 'post'], 'customers{customer}', function () {
+//Route::get('customers/{id}', function ($id) {
+      //return 'customers'.$id;
 //Route::get('customers/{id}', function ($id) {
     //return 'customers '.$id;
-});
 //Route::any('/', function () {
     //
 //});
 //Route::resource('edit', "EditController");
-});
+
 //Route::any('customers', function () {
 //Route::resource('customers/edit', "CustomersController");
 

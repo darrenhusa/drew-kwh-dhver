@@ -9,7 +9,7 @@
           <a href="/customers/create">Enter Customer</a>
           <a href="/customers">All Customers</a>
           <a href="/reservations">All Reservations</a>
-          <a href="/customers/edit"> Edit Customers</a>
+        
         </p>
     </body>
 </html>

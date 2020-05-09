@@ -14,7 +14,7 @@ class CustomersController extends Controller
     // dd('hello');
     $customers = Customer::all();
 
-    return view ('customers.index', ['customers' => $customers]);
+     return view ('customers.index', ['customers' => $customers]);
   }
 
 
@@ -23,7 +23,7 @@ class CustomersController extends Controller
   {
 
     //dd('hello');
-    return view ('customers.Create');
+    return view ('customers.create');
   }
 
 
@@ -32,49 +32,45 @@ class CustomersController extends Controller
   {
     // dd('inside store');
 
-    $customers = new Customer();
-
-    $customers->first_name = request('first_name');
-    $customers->last_name = request('last_name');
-    // dd($customer);
-    $customers->save();
-
+    Customer::create(request(['first_name','last_name']));
     return redirect('/customers');
   }
+
+
 
 
   public function show() {
       //dd('hello world');
       //$customers = Customer::get($id);
-        return view ('customers.edit',);
-   }
+        return view ('customers.show',);
+ }
 
 
 
 
-  public function edit($id)
-  {
-    $customers = Customer::find($id);
-    return view('customers.edit', compact('customer'));
-  }
+ public function edit($id)
+ {
+   $customer = Customer::find($id);
+   return view('customers.edit', compact('customer'));
+ }
 
-  public function update($id)
-  {
-    $customers = Customer::find($id);
+ public function update($id)
+ {
+   $customer = Customer::find($id);
 
-    $customers->first_name = request('first_name');
-    $customers->last_name = request('last_name');
+   $customer->first_name = request('first_name');
+   $customer->last_name = request('last_name');
 
-    $customers->save();
+   $customer->save();
 
-    return redirect('/customers');
-  }
+   return redirect('/customers');
+ }
 
-  public function destroy($id)
-  {
-    $customers->delete($id);
-    //customer::find($id)->delete($customer);
+ public function destroy($id)
+ {
+   $customers->delete($id);
+   //customer::find($id)->delete($customer);
 /// issue is possible here////
-    return redirect('customers');
-  }
+   return redirect('customers');
+ }
 }

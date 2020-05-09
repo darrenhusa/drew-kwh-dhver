@@ -1,55 +1,29 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <title>Document</title>
-
-
-
+</head>
 <body>
-
-  <h1>Edit Customer</h1>
-
-  <form method="post" action="">
-
-    @method('Edit')
-
+  <h1>Enter New Customer</h1>
+  <form method="POST" action="/customers/{{ $customer->id }}/edit">
+    @method('patch')
     @csrf
 
     <div>
-
       <p>First Name:</p>
-
-      <input class="input" type="text" name="first_name"  value="" /><br />
-
+      <input class="input" type="text" name="first_name" value="{{ $customer->first_name}}" /><br />
       <p>Last Name:</p>
-
-      <input class="input" type="text" name="last_name" value="" /><br />
-
-      <p><button type="show">Edit Customer</button></p>
-
+      <input class="input" type="text" name="last_name" value="{{ $customer->last_name}}" /><br />
+      <p><button type="submit">Save Customer</button></p>
     </form>
 
-
-
-    <form method="Delete" action="/customers">
-
+      <form method="POST" action="/customers/{{ $customer->id }}/edit">
         @method('DELETE')
-
-
         @csrf
-
-      <p><button type="GET">Delete Customer</button></p>
-</form>
-
+      <p><button type="submit">Delete Customer</button></p>
+    </form>
     </div>
-
   </form>
-
 </body>
-
 </html>

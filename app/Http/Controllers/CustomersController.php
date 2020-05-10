@@ -39,10 +39,10 @@ class CustomersController extends Controller
 
 
 
-  public function show() {
+  public function show($id) {
       //dd('hello world');
-      //$customers = Customer::get($id);
-        return view ('customers.show',);
+        $customers = Customer::findOrFail($id);
+        return view ('customers.show',compact('customer'));
  }
 
 

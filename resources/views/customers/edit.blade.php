@@ -6,8 +6,8 @@
 </head>
 <body>
   <h1>Enter New Customer</h1>
-  <form method="POST" action="/customers/{{ $customer->id }}/edit">
-    @method('patch')
+  <form method="POST" action="/customers/{{ $customer->id }}edit">
+    @method('PATCH')
     @csrf
 
     <div>
@@ -18,7 +18,7 @@
       <p><button type="submit">Save Customer</button></p>
     </form>
 
-      <form method="POST" action="/customers/{{ $customer->id }}/edit">
+      <form method="POST" action="/customers/{{ $customer->id }}">
         @method('DELETE')
         @csrf
       <p><button type="submit">Delete Customer</button></p>

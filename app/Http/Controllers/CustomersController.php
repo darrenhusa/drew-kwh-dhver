@@ -57,7 +57,7 @@ class CustomersController extends Controller
  public function update($id)
  {
    $customer = Customer::find($id);
-
+   //dd('hello');
    $customer->first_name = request('first_name');
    $customer->last_name = request('last_name');
 
@@ -68,9 +68,11 @@ class CustomersController extends Controller
 
  public function destroy($id)
  {
-   $customers->delete($id);
-   //customer::find($id)->delete($customer);
+   $customer = Customer::find($id);
+   //dd('hello');
+   //$customers->delete($id);
+   customer::find($id)->delete();
 /// issue is possible here////
-   return redirect('customers');
+   return redirect('/customers');
  }
 }

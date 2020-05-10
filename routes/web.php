@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 });
 Route::resource('customers', "CustomersController");
-//Route::match(['Delete', 'post'], 'customers{customer}', function () {
+
 //Route::get('customers/{id}', function ($id) {
       //return 'customers'.$id;
 //Route::get('customers/{id}', function ($id) {

@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>All Reservations</title>
 </head>
 <body>
   <h1>All Reservations</h1>
-  <p>
-    <a href="/">Home</a>
-  </p>
-</p>
-<a href="/customers/create">Enter New Customer</a>
-</p>
+  <p><a href="/">Home</a></p>
+
   <table border="1">
     <tr>
       <th>ID</th>
@@ -21,10 +17,10 @@
       <th>Start Date</th>
       <th>End Date</th>
       <th>Amount</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    
+      <th></th>
+      <th></th>
     </tr>
+
     @foreach ($reservations as $reservation)
       <tr>
         <td>{{$reservation->customer_id}}</td>
@@ -32,30 +28,19 @@
         <td>{{$reservation->start_date}}</td>
         <td>{{$reservation->end_date}}</td>
         <td>{{$reservation->amount}}</td>
-        <td><a href="reservations/{reservation}/edit">Update</a></td>
-        <td><form method="POST" action="reservations/{reservation}">
-          @method('DELETE')
-          @csrf
-        <p><button type="submit">Delete room</button></p>
-      </form></td>
-
-
-
-
-
-
-
-
-
-
-</tr>
-
+        <td>
+          <a href="reservations/{reservation}/edit"><button type="submit">Edit</button></a>
+        </td>
+        <td>
+          <form method="POST" action="reservations/{reservation}">
+            @method('DELETE')
+            @csrf
+            <p><button type="submit">Delete</button></p>
+          </form>
+        </td>
+      </tr>
       @endforeach
     </tr>
-    <p>
-    <a href=" reservations/{reservation}/edit">Edit Reservation</a>
-
-  </p>
   <table>
 </body>
 </html>

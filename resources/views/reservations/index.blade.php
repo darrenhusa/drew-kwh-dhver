@@ -21,8 +21,9 @@
       <th>Start Date</th>
       <th>End Date</th>
       <th>Amount</th>
-      <th>Delete</th>
       <th>Edit</th>
+      <th>Delete</th>
+    
     </tr>
     @foreach ($reservations as $reservation)
       <tr>

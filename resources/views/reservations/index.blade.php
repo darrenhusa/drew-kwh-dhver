@@ -23,11 +23,11 @@
 
     @foreach ($reservations as $reservation)
       <tr>
-        <td>{{$reservation->customer_id}}</td>
-        <td>{{$reservation->room_no}}</td>
-        <td>{{$reservation->start_date}}</td>
-        <td>{{$reservation->end_date}}</td>
-        <td>{{$reservation->amount}}</td>
+        <td>{{ $reservation->customer_id }}</td>
+        <td>{{ $reservation->room_no }}</td>
+        <td>{{ $reservation->start_date->toDateString() }}</td>
+        <td>{{ $reservation->end_date->toDateString() }}</td>
+        <td>{{ $reservation->amount }}</td>
         <td>
           <a href="reservations/{reservation}/edit"><button type="submit">Edit</button></a>
         </td>

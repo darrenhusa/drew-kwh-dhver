@@ -35,7 +35,7 @@
         <td><form method="POST" action="reservations/{reservation}">
           @method('DELETE')
           @csrf
-        <p><button type="submit">Delete Customer</button></p>
+        <p><button type="submit">Delete room</button></p>
       </form></td>
 
 

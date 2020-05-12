@@ -55,9 +55,10 @@ public function store($customer_id)
 
      public function edit($id)
      {
-       dd('hello edit');
-       //$reservation = reservation::find($id);
-       //return view('reservation.edit', compact('reservation'));
+       //dd('hello edit');
+       $reservation = reservation::find($id);
+       return view('reservations.edit', compact('reservation'));
+       //return redirect('/reservations');
      }
 
      public function update($id)
@@ -76,9 +77,9 @@ public function store($customer_id)
 
     public function destroy($customer_id)
     {
-      dd('hello delete');
-      //$reservation =reservation::find($customer_id);
-      //reservation::find($customer_id)->delete($id);
-      //return redirect('/');
+      //dd('hello delete');
+      $reservation = reservation::find($customer_id);
+      $reservation ->delete($customer_id);
+      return redirect('/reservation');
     }
 }

@@ -6,14 +6,12 @@
 </head>
 <body>
   <h1>Edit Reseravtion</h1>
-  reservations/{reservation}/edit
+
   <form method="POST" action="reservations/{reservation}/edit">
     @method('PATCH')
     @csrf
 
-    <p>
-         <b>Enter Reservation for {{$customer->first_name}} {{$customer->last_name}}</b>
-     </p>
+
      <h4 class="info-text">Select Room<br>
       <select name="room_no" id="room_no">
           <option value=100>100</option>
@@ -52,3 +50,5 @@
          </td>
          <p><button type="submit">Save Customer</button></p>
          </form>
+       </body>
+       </html>

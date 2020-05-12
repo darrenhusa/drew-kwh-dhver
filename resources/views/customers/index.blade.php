@@ -13,7 +13,7 @@
       <td><a href="/">Home</a></td>
     </tr>
     <tr>
-      <td><a href="/customers/create">Enter New Customer</a></td>
+      <td><a href="/customers/create">Create Customer</a></td>
     </tr>
   </table>
 

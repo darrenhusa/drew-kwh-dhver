@@ -8,7 +8,6 @@ use App\Customer;
 
 class CustomersController extends Controller
 {
-
   public function index()
   {
     // dd('hello');
@@ -17,16 +16,12 @@ class CustomersController extends Controller
      return view ('customers.index', ['customers' => $customers]);
   }
 
-
-
   public function create()
   {
 
     //dd('hello');
     return view ('customers.create');
   }
-
-
 
   public function store()
   {
@@ -36,28 +31,22 @@ class CustomersController extends Controller
     return redirect('/customers');
   }
 
-
-
-
   public function show($id) {
       //dd('hello world');
         $customers = Customer::findOrFail($id);
         return view ('customers.show',compact('customer'));
  }
 
-
-
-
- public function edit($id)
+ public function edit(Customer $customer)
  {
-   $customer = Customer::find($id);
+   // $customer = Customer::find($id);
    return view('customers.edit', compact('customer'));
  }
 
- public function update($id)
+ public function update(Customer $customer)
  {
-   $customer = Customer::find($id);
-   //dd('hello');
+   // $customer = Customer::find($id);
+   // dd('inside update');
    $customer->first_name = request('first_name');
    $customer->last_name = request('last_name');
 

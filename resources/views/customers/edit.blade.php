@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Document</title>
+  <title>Update Customer</title>
 </head>
 <body>
-  <h1>Enter New Customer</h1>
-  <form method="POST" action="/customers/{{ $customer->id }}edit">
-    @method('PATCH')
-    @csrf
+  <h1>Update Customer</h1>
+  <div>
+    <form method="POST" action="/customers/{{ $customer->id }}">
+      @method('PATCH')
+      @csrf
 
-    <div>
-      <p>First Name:</p>
-      <input class="input" type="text" name="first_name" value="{{ $customer->first_name}}" /><br />
-      <p>Last Name:</p>
-      <input class="input" type="text" name="last_name" value="{{ $customer->last_name}}" /><br />
-      <p><button type="submit">Save Customer</button></p>
-    </form>
-  <form method="POST" action="/customers/{{ $customer->id }}">
-        @method('DELETE')
-        @csrf
-      <p><button type="submit">Delete Customer</button></p>
-    </form>
-    </div>
-  </form>
+        <label for="first_name">First Name:</label>
+        <input class="input"
+               type="text"
+               id="first_name"
+               name="first_name"
+               value="{{ $customer->first_name }}" /><br />
+
+        <label for="last_name">Last Name:</label>
+        <input class="input"
+               type="text"
+               id="last_name"
+               name="last_name"
+               value="{{ $customer->last_name }}" /><br />
+        <p><button type="submit">Save</button></p>
+      </form>
+  </div>
 </body>
 </html>

@@ -8,17 +8,40 @@
 </head>
 <body>
   <h1>All Customers</h1>
-  <p>
-    <a href="/customers/create">Enter Customer</a>
-  </p>
-  <table>
-    @foreach ($customers as $customer)
-      <li>{{$customer->first_name}} {{$customer->last_name}}</li>
-      <p>
-      <a href="/customers/{{$customer->id}}/edit">Edit Customer</a>
-      <a href="/reservations/create/{{ $customer->id }}">Make Reservation</a>
+  <table border="1">
+
+    <p>
+      <a href="/">Home</a>
     </p>
+    <a href="/customers/create">Enter New Customer</a>
+  </p>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Edit</th>
+    <th>Reserve</th>
+    <th>Delete</th>
+  </tr>
+    @foreach ($customers as $customer)
+      <tr>
+        <td>{{$customer->first_name}}</td>
+        <td>{{$customer->last_name}}</td>
+        <td><a href="/customers/{{$customer->id}}/edit">Update</a></td>
+        <td><a href="/reservations/create/{{ $customer->id }}">Make Reservation</a></td>
+        <td><form method="POST" action="/customers/{{ $customer->id }}">
+          @method('DELETE')
+          @csrf
+        <p><button type="submit">Delete Customer</button></p>
+      </form></td>
+        <p>
+
+
+
       @endforeach
-  </table>
+
+      <a href="/reservations">All Reservations</a>
+    </p>
+  </tr>
+  <table>
 </body>
 </html>

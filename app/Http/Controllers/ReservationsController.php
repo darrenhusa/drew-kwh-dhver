@@ -43,4 +43,42 @@ public function store($customer_id)
 
           return redirect('/customers');
     }
+
+      public function show($id) {
+          //dd('hello world');
+            $reservation = reservation::findOrFail($id);
+            return view ('reservation.show',compact('reservation'));
+     }
+
+
+
+
+     public function edit($id)
+     {
+       dd('hello edit');
+       //$reservation = reservation::find($id);
+       //return view('reservation.edit', compact('reservation'));
+     }
+
+     public function update($id)
+     {
+       $reservation = reservation::find($id);
+       $reservation->room_no = request('room_no');
+       $reservation->start_date = request('start_date');
+       $reservation->end_date = request('end_date');
+       $reservation->amount = request('amount');
+       $reservation->customer_id = request('customer_id');
+      $reservation->save();
+
+       return redirect('/reservation');
+     }
+
+
+    public function destroy($customer_id)
+    {
+      dd('hello delete');
+      //$reservation =reservation::find($customer_id);
+      //reservation::find($customer_id)->delete($id);
+      //return redirect('/');
+    }
 }

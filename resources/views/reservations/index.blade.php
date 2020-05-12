@@ -8,11 +8,47 @@
 </head>
 <body>
   <h1>All Reservations</h1>
+  <p>
+    <a href="/">Home</a>
+  </p>
+</p>
+<a href="/customers/create">Enter New Customer</a>
+</p>
   <table border="1">
     <tr>
-      <th>ID</th><th>Room Number</th><th>Start Date</th><th>End Date</th><th>Amount</th></tr>
+      <th>ID</th>
+      <th>Room Number</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Amount</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </tr>
     @foreach ($reservations as $reservation)
-      <tr><td>{{$reservation->customer_id}}</td><td>{{$reservation->room_no}}</td><td>{{$reservation->start_date}}</td><td>{{$reservation->end_date}}</td><td>{{$reservation->amount}}</td></tr>
+      <tr>
+        <td>{{$reservation->customer_id}}</td>
+        <td>{{$reservation->room_no}}</td>
+        <td>{{$reservation->start_date}}</td>
+        <td>{{$reservation->end_date}}</td>
+        <td>{{$reservation->amount}}</td>
+        <td><a href="reservations/{reservation}/edit">Update</a></td>
+        <td><form method="POST" action="reservations/{reservation}">
+          @method('DELETE')
+          @csrf
+        <p><button type="submit">Delete Customer</button></p>
+      </form></td>
+
+
+
+
+
+
+
+
+
+
+</tr>
+
       @endforeach
     </tr>
     <p>

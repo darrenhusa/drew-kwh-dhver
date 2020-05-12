@@ -1,15 +1,35 @@
 <!doctype html>
 <html>
       <head>
-        <title></title>
+        <title>KWH Home</title>
       </head>
     <body>
-      <h1>Where do you want to go?<h1>
-        <p>
-          <a href="/customers/create">Enter Customer</a>
-          <a href="/customers">All Customers</a>
-          <a href="/reservations">All Reservations</a>
-        
-        </p>
+      <h1>King William Hotel</h1>
+      <h2>Dashboard</h2>
+        <table>
+          <tr>
+            <th>
+              Customers
+          </th>
+            <th>
+              Reservations
+          </th>
+          </tr>
+          <tr>
+            <td>
+                <a href="/customers">View All</a>
+            </td>
+            <td>
+                <a href="/reservations">View All</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <a href="/customers/create">Add New</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+        </table>
     </body>
 </html>

@@ -8,13 +8,16 @@
 </head>
 <body>
   <h1>All Customers</h1>
-  <table border="1">
+  <table>
+    <tr>
+      <td><a href="/">Home</a></td>
+    </tr>
+    <tr>
+      <td><a href="/customers/create">Enter New Customer</a></td>
+    </tr>
+  </table>
 
-    <p>
-      <a href="/">Home</a>
-    </p>
-    <a href="/customers/create">Enter New Customer</a>
-  </p>
+  <table border="1">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -45,12 +48,8 @@
             <button type="submit">Create Reservation</button>
           </a>
         </td>
-        <p>
-      @endforeach
-
-      <a href="/reservations">All Reservations</a>
-    </p>
-  </tr>
-  </table>
-</body>
+      </tr>
+    @endforeach
+    </table>
+  </body>
 </html>

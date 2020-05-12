@@ -10,37 +10,28 @@
 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Document</title>
+  <title>Create Customer</title>
 
 </head>
-<p>
-  <a href="/">Home</a>
-</p>
-
 <body>
+  <p>
+    <a href="/">Home</a>
+  </p>
 
-  <h1>Enter New Customer</h1>
+  <h1>Create Customer</h1>
 
   <form method="POST" action="/customers">
-
     @csrf
 
-
-
     <div>
+  		<label for="first_name">First Name:</label>
+  		<input class="input" type="text" id="first_name" name="first_name" value="" /><br />
 
-  		<p>First Name:</p>
+  		<label for="last_name">Last Name:</label>
+  		<input class="input" type="text" id="last_name" name="last_name" value="" /><br />
 
-  		<input class="input" type="text" name="first_name" value="" /><br />
-
-  		<p>Last Name:</p>
-
-  		<input class="input" type="text" name="last_name" value="" /><br />
-
-  		<p><button type="submit">Create Customer</button></p>
-
+  		<button type="submit">Save</button>
     </div>
-
   </form>
 
 </body>
